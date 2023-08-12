@@ -22,6 +22,10 @@
       {
         "src": "/clear",
         "dest": "todoServer.js"
+      },
+      {
+        "src": "/(.*)",
+        "dest": "/frontend/$1"
       }
     ]
   }
