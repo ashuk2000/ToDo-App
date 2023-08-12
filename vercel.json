@@ -2,14 +2,31 @@
     "version": 2,
     "builds": [
       {
-        "src": "./todoServer.js",
+        "src": "todoServer.js",
         "use": "@vercel/node"
+      },
+      {
+        "src": "frontend/**",
+        "use": "@vercel/static"
       }
     ],
     "routes": [
       {
+        "src": "/todos/:id",
+        "dest": "todoServer.js"
+      },
+      {
+        "src": "/todos",
+        "dest": "todoServer.js"
+      },
+      {
+        "src": "/clear",
+        "dest": "todoServer.js"
+      },
+      {
         "src": "/(.*)",
-        "dest": "/"
+        "dest": "/frontend/$1"
       }
     ]
   }
+  

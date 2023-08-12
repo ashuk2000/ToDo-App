@@ -52,7 +52,7 @@ updateForm.addEventListener('submit',(event)=>{
 
     console.log(`Sending the data ${JSON.stringify(data)}`);
 
-    fetch(`http://localhost:3000/todos/${id}`,
+    fetch(`/todos/${id}`,
     {
         method:'PUT',
         body:JSON.stringify(data),
@@ -114,7 +114,7 @@ form.addEventListener('submit',(event)=>{
 
     console.log(JSON.stringify(data));
 
-    fetch('http://localhost:3000/todos',
+    fetch('/todos',
     {
         method:'POST',
         body:JSON.stringify(data),
@@ -138,7 +138,7 @@ const clearButton =document.getElementById('clearButton');
 clearButton.addEventListener('click',()=>{
     console.log("Clicked the clear method");
     var xhr=new XMLHttpRequest();
-    xhr.open('GET','http://localhost:3000/clear',true);
+    xhr.open('GET','/clear',true);
     xhr.send();
 
     xhr.onload=()=>{
@@ -162,7 +162,7 @@ deleteButton.addEventListener('click',()=>{
             return;
         }
     var xhr=new XMLHttpRequest();
-    xhr.open('DELETE',`http://localhost:3000/todos/${id}`,true);
+    xhr.open('DELETE',`/todos/${id}`,true);
     xhr.send();
 
     xhr.onload=()=>{
@@ -178,7 +178,7 @@ deleteButton.addEventListener('click',()=>{
 })
 
 function printData(){
-  fetch("http://localhost:3000/todos",{
+  fetch("/todos",{
     method:"GET"
   }).then((resp)=>{
     return resp.json()
