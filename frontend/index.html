@@ -1,0 +1,57 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div id="wrapper">
+      <h2>Add a new todo item</h2>
+      <form action="http://localhost:3000/todos" method="post" id="TitleDesc">
+        <label for="title">Title</label>
+        <input type="text" id="title" class="textBox" name="title" /><br />
+        <label for="description">Description</label>
+        <input
+          type="text"
+          id="description"
+          class="textBox"
+          name="description"
+        />
+        <input type="submit" value="Submit" class="textBox" />
+      </form>
+      <h2>Clear all existing todos</h2>
+      <button id="clearButton">Clear Data</button>
+      <h2>Delete Todos</h2>
+      <div class="delete-section">
+        <label for="deleteId">Delete By Id</label>
+        <input type="text" id="deleteId" class="textBox" name="deleteId" />
+        <button id="delete">Delete</button>
+      </div>
+      <h2>Display Todos</h2>
+      <button onclick="printData() ">GetTodos</button>
+      <h2>Update Task</h2>
+
+      <form id="updateForm">
+        <div class="update-section">
+          <label for="taskId">Task Id</label>
+          <input class="textBox" type="text" id="taskId" name="taskId" />
+
+          <label for="taskName">Task Name</label>
+          <input class="textBox" type="text" id="taskName" name="taskName" />
+
+          <label for="taskDesc">Task Description</label>
+          <input type="text" id="taskDesc" class="textBox" name="description" />
+
+          <input type="submit" class="textBox" />
+        </div>
+      </form>
+      <div id="customAlertOverlay"></div>
+      <div id="customAlertBox">
+        <div id="customAlertContent">
+          <div id="alertText"></div>
+          <button type="button" onclick="copyAlertText()">Copy</button>
+          <button type="button" onclick="hideAlert()">Close</button>
+        </div>
+      </div>
+      <script src="validation.js"></script>
+    </div>
+  </body>
+</html>

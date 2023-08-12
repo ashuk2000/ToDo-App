@@ -1,0 +1,116 @@
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #c9c4c4;
+  }
+
+  
+  #wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .textBox {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    width: 200px;
+    display: block;
+  }
+  
+  .textBox:focus {
+    outline: none;
+    border-color: #00a6e8;
+  }
+  
+  .textBox[type="submit"] {
+    background-color: #00a6e8;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  .textBox[type="submit"]:hover {
+    background-color: #0088b3;
+  }
+  
+  button {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    width: 200px;
+    background-color: #00a6e8;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #0088b3;
+  }
+  
+  h2 {
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .textBox:focus + label {
+    outline: none;
+  }
+
+  #customAlertOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+    display: none;
+  }
+  
+  #customAlertBox {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 20px;
+    z-index: 10000;
+    display: none;
+  }
+  
+  #customAlertContent {
+    display: flex;
+    align-items: center;
+  }
+  
+  #alertText {
+    flex-grow: 1;
+    margin-right: 10px;
+  }
+  
+  #customAlertBox button {
+    padding: 8px 16px;
+    background-color: #00a6e8;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  #customAlertBox button:hover {
+    background-color: #0088b3;
+  }
+  
