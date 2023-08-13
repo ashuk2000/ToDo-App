@@ -149,6 +149,7 @@ app.put('/todos/:id',(req,res)=>{
   {
     let task=req.body;
     // let old_task=idToTask.get(id);
+    task.id=id;
     idToTask.set(id,task);  
     // saveToFiles();
     res.send('Updated successfully to \n'+JSON.stringify(task));
