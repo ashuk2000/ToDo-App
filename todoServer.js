@@ -113,7 +113,7 @@ app.delete('/todos/:id',(req,res)=>{
   if(idToTask.has(id)){
     let task=idToTask[id];
     idToTask.delete(id);
-    saveToFiles();
+    // saveToFiles();
     res.send(`Task with id ${id} deleted successfully `);
   }
   else
@@ -150,7 +150,7 @@ app.put('/todos/:id',(req,res)=>{
     let task=req.body;
     let old_task=idToTask.get(id);
     idToTask.set(id,task);  
-    saveToFiles();
+    // saveToFiles();
     res.send('Updated successfully to \n'+JSON.stringify(task));
   }
 
@@ -179,7 +179,7 @@ app.post('/todos',(req,res)=>{
   res.statusCode=201;
 
   console.log(idToTask);
-  saveToFiles();
+  // saveToFiles();
 
   res.send({
      id:id
@@ -191,8 +191,8 @@ app.get('/clear',async (req,res)=>{
   console.log("Clearing the cahced data");
   idToTask.clear();
   try{
-    let ret=await saveToFiles();
-    console.log(ret);
+    // let ret=await saveToFiles();
+    // console.log(ret);
     res.send();
   } catch (err){
     console.error(err);
