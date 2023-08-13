@@ -143,15 +143,16 @@ app.get('/todos/:id',(req,res)=>{
 });
 
 app.put('/todos/:id',(req,res)=>{
-  let id=req.params.id;
+  const id=req.params.id;
 
   if(idToTask.has(id))
   {
     let task=req.body;
-    let old_task=idToTask.get(id);
+    // let old_task=idToTask.get(id);
     idToTask.set(id,task);  
     // saveToFiles();
     res.send('Updated successfully to \n'+JSON.stringify(task));
+    console.log(`Updated the task with id ${id}`)
   }
 
   else{
