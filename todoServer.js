@@ -48,8 +48,8 @@ const app = express();
 const cors=require('cors');
 // var taskToId=new Map();
 var idToTask=new Map();
-
-loadFromFiles();
+ 
+// loadFromFiles();
 // app.use(cors());
 app.use(express.static(__dirname + '/frontend'));
 app.use(bodyParser.json());
